@@ -1,0 +1,11 @@
+{
+  "event": "update_params",
+  "payload": {
+    "baud_tx": 9600,
+    "baud_rx": 9600,
+    "noise_mu": 0.0,
+    "noise_sigma_sq": 0.15,
+    "v_high": 2.0,
+    "v_low": 0.8
+  }
+}
