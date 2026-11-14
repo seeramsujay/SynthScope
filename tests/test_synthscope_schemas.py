@@ -1,6 +1,7 @@
 import json
 from pathlib import Path
 
+
 def test_control_packet_schema():
     packet_path = Path("common-schemas/control_packet.json")
     assert packet_path.exists()
@@ -11,6 +12,7 @@ def test_control_packet_schema():
     assert "baud_rx" in payload
     assert payload["baud_tx"] > 0
     assert payload["v_high"] > payload["v_low"]
+
 
 def test_waveform_packet_schema():
     packet_path = Path("common-schemas/waveform_packet.json")
@@ -23,6 +25,7 @@ def test_waveform_packet_schema():
     assert len(payload["raw_analog"]) == len(payload["filtered_binary"])
     assert len(payload["filtered_binary"]) == len(payload["strobe_ticks"])
     assert all(val in (0, 1) for val in payload["filtered_binary"])
+
 
 def test_docs_integrity():
     arch_doc = Path("docs/SYSTEM_ARCHITECTURE.md")
